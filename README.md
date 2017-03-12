@@ -2,7 +2,6 @@
 A basic application implementing microservices architecture.
 Using :
 - Net Core
-- MassTransit
 - RabbitMQ
 - Docker
 
