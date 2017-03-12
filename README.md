@@ -1,5 +1,5 @@
 # delivery-service-management
-Delivery management application implementing microservices architecture.
+A basic application implementing microservices architecture.
 Using :
 - Net Core
 - MassTransit
