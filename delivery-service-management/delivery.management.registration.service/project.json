@@ -1,14 +1,18 @@
-﻿{
+{
   "version": "1.0.0-*",
   "buildOptions": {
     "emitEntryPoint": true
   },
 
   "dependencies": {
+    "delivery.management.message.contracts": "1.0.0-*",
+    "Microsoft.Extensions.DependencyInjection": "1.1.0",
     "Microsoft.NETCore.App": {
       "type": "platform",
       "version": "1.0.1"
-    }
+    },
+    "Newtonsoft.Json": "10.0.1-beta1",
+    "RabbitMQ.Client": "5.0.0-pre3"
   },
 
   "frameworks": {
