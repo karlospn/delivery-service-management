@@ -7,6 +7,9 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
+using AutoMapper;
+using delivery.management.webui.Models;
+using delivery.management.webui.RabbitMqManager;
 
 namespace delivery.management.webui
 {
@@ -27,8 +30,10 @@ namespace delivery.management.webui
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            // Add framework services.
+            services.AddAutoMapper();
+            services.AddTransient<IRabbitMqManager, RabbitMqManager.RabbitMqManager>();
             services.AddMvc();
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -36,6 +41,7 @@ namespace delivery.management.webui
         {
             loggerFactory.AddConsole(Configuration.GetSection("Logging"));
             loggerFactory.AddDebug();
+            AutoMapperModelConfig.RegisterMappings();
 
             if (env.IsDevelopment())
             {
